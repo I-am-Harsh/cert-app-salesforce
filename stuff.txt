@@ -1,0 +1,221 @@
+Workflow vs Process Builder
+
+
+        Workflow automates the following types of actions based on your organization's processes:
+        Tasks — Assign a new task to a user, role, or record owner.
+        Email Alerts — Send an email to one or more recipients you specify.
+        Field Updates — Update the value of a field on a record.
+        Outbound Messages — Send a secure, configurable API message (in XML format) to a designated listener.
+
+
+        For example, workflow can:
+
+
+        Assign follow-up tasks to a support rep one week after a case is updated.
+        Send sales management an email alert when a sales rep qualifies a large deal.
+        Change the Owner field on a contract three days before it expires.
+        Trigger an outbound API message to an external HR system to initiate the reimbursement process for an approved expense report.
+        Each workflow rule consists of:
+            Criteria that cause the workflow rule to run.
+                Immediate actions that execute when a record matches the criteria. For example, Salesforce can automatically send an 
+                    email that notifies the account team when a new high-value opportunity is created.
+                Time-dependent actions that queue when a record matches the criteria, and execute according to time triggers. 
+                For example, Salesforce can automatically send an email reminder to the account team if a high-value opportunity is 
+                still open ten days before the close date
+
+
+
+        Process Builder
+
+
+        Process Builder is a newer tool for admins which is even more powerful. 
+        no outbound
+
+        Create a record (not just Tasks!)
+        Update related records
+        Launch a Quick Action
+        Post to Chatter
+        Launch a Flow
+        Call Apex code
+        Submit for approval
+        Invoke another process
+
+
+        Since Process Builder also has the ability to configure multiple 
+        if-then conditions in one Process rather than separate Workflow rules,
+        it helps new admins and admins who inherit orgs visualize the business 
+        processes with its sleek visual interface.
+
+
+
+LWC vs Aura
+
+    Since LWC has come into existence we can now create Lightning components in the following ways:
+
+    Aura components– which are also known as lightning components.
+    Lightning Web Components- the newest way to create lightning components.
+
+
+    The addition of above features give more power to our web Stack to create a lightning UI component, 
+    It doesn’t require a mid-Layer to the browser which impacts our speed and performance. 
+    This one is the main reason developers are struggling within Aura and now LWC will work for them.
+    Aura-based Lightning components are built using both HTML and JavaScript, 
+    but LWC is built directly on the Web stack.
+
+
+    Web components can easily interact with the Aura component and can handle the events of one another
+
+
+    A developer who works on LWC is not only using coding skills on a 
+    particular framework but in other frameworks 
+    like React or Angular, which are based on the Web Stack.
+
+
+    In addition to the latest features, LWC still embraces the features 
+    like the Security, Lightning Data Service, and Base lightning components from Aura.
+
+
+    Creating an LWC is fast as it no longer requires the user to download the JavaScript 
+    and wait for the engine to compile it before rendering the component.
+   
+   
+    It is possible to include LWC in Aura, but not the other way around as the generic elements 
+    cannot be added to the custom components.
+
+
+    WHY LWC -->
+        Why do you go for LWC instead of existing Aura Components?
+        Lightning Web Components (LWC) is a stack of modern lightweight frameworks built on the latest web standards. 
+        It is a DOM (Document Object Model), element created through reusable 
+        code and is used to generate a dynamic interface
+        without using JavaScript or building a Library. 
+        This feasibility makes it quick and seamless, 
+        saving the developers a ton of time and effort on the Web Stack. 
+
+    Easy to Learn: 
+        LWC is basically takes the form through native web standards that is in the browser. 
+        It means that no added abstraction layer like Aura Framework or any other framework, 
+        we only need standard JavaScript to develop.
+    Better Performance: 
+        Because of the no added abstraction layer, LWC is likely to render faster than aura components since performance is 
+        important to deliverability.
+    Faster loading sites: 
+        As its built on web standard thus loads faster and is lightweight 
+    More Standards, less proprietary: 
+        LWC has built-in browser security features from Web Components Standards, 
+        so the usage of out-of-the-box is more and less of customization. 
+        We all know that Aura is proprietary so with LWC, the more we know about web standards; 
+        more we’ll have the skill that can be used in other technologies as well.
+    Common Components/Service Components: 
+        We can now write components that have no User Interface in LWC, 
+        and those components can be reused in other components which are more efficient than Static Resources.
+    Easier to ramp for developers: 
+        No additional framework is needed to learn in order to develop LWC and hence transition for the developers is a lot easier.
+        Better security, better testing and better browser compatibility: With LWC, CSS, Script and DOM Isolation are better and has more limited event scope. With each of these we have more consistency in designing Components. LWC also supports Two-way data binding with which we can coordinate how data moves between Components
+ 
+    LDS can be used in LWC 
+        Import from ‘lightning/uiRecordApi’
+
+        createRecord(recordInput)
+        updateRecord(recordInput)
+        deleteCreateRecord(recordInput)
+        getRecord(recordInput)
+
+    LWC can be embedded inside Aura Components, but Aura Components cannot be embedded inside LWC.
+
+
+
+<-- Data Management -->
+    Data Import Wizard—this tool, accessible through the Setup menu, lets you import data in common standard objects, 
+     such as contacts, leads, accounts, as well as data in custom objects. It can import up to 50,000 records at a time. 
+     It provides a simple interface to specify the configuration parameters, data sources, and the field mappings that map the 
+     field names in your import file with the field names in Salesforce.
+
+    Data Loader—this is a client application that can import up to five million records at a time, of any data type,
+    either from files or a database connection. It can be operated either through the user interface or the command line. 
+    In the latter case, you need to specify data sources, field mappings, and other parameters via configuration files. 
+    This makes it possible to automate the import process, using API calls.
+
+
+<-- Level of Access --> 
+    organization - 
+        For your whole org, you can maintain a list of authorized users, set password policies, and limit logins to certain hours and locations.
+    Objects -   Profiles permission sets - Profile settings determine which data the user can see, 
+                and permissions determine what the user can do with that data.  
+
+        Access to object-level data is the simplest thing to control. By setting permissions on a particular type of object, 
+        you can prevent a group of users from creating, viewing, editing, or deleting any records of that object. For example, 
+        you can use object permissions to ensure that interviewers can view positions and 
+        job applications but not edit or delete them.
+    Fields - can be done using profiles
+        You can restrict access to certain fields, even if a user has access to the object. For example, 
+        you can make the salary field in a position object invisible to interviewers 
+        but visible to hiring managers and recruiters.
+    records -
+        ou can allow particular users to view an object, but then restrict the individual object records they're allowed to see. 
+        For example, an interviewer can see and edit her own reviews, 
+        but not the reviews of other interviewers. You can manage record-level access in these four ways.
+
+            OWD - specify the default level of access users have to each others’ records. You use org-wide to lock down and 
+                then givr more permission
+
+            Role Heirarchy
+
+            Sharing Rules
+
+            Manual Rules - allows owners of particular records to share them with other users. 
+                Although manual sharing isn’t automated like org-wide sharing settings, role hierarchies, or sharing rules, 
+                it can be useful in some situations, such as when a recruiter 
+                going on vacation needs to temporarily assign ownership of a job application to someone else.
+
+
+
+        OWD - 
+        Private - Only record + senior
+        Public Read only - all view + senior edit
+        Public R/w - all by all
+        controllled by parent - permission pass down
+
+
+<-- Junction Object-->
+
+    In Salesforce, a Junction Object is a custom object with 
+    two master-detail relationships to two different record types.
+    It is used to represent a many-to-many relationship in which several junction objects can link one instance 
+    of a record to many children, and each child can equally be linked to many parents.
+    
+
+    If you take the Recruiting application example, 
+    you can see that a Position can be linked to many Candidates, and a Candidate can apply for different Positions. 
+    To create this data model you need a third object "Job Application" that links the 2.
+
+    So you'd create a lookup field for both Position and Candidate object on the "Job Application" 
+    object. This will establish many to many relationship between Position and 
+    Candidate via the "Job Application" object known as the junction object.
+
+
+<-- Triggers -->
+    Typically, you use triggers to perform operations based on specific conditions, to modify related records or 
+    restrict certain operations from happening. 
+    You can use triggers to do anything you can do in Apex, including 
+    executing SOQL and DML or calling custom Apex methods.
+
+    before insert
+    before update
+    before delete
+    after insert
+    after update
+    after delete
+    after undelete
+
+    Before triggers are used to update or validate record values before they’re saved to the database.
+
+    After triggers are used to access field values that are set by the 
+    system (such as a record's Id or LastModifiedDate field), 
+    and to affect changes in other records. The records that fire the after trigger are read-only.
+
+
+
+
+    open status for 10 bucks 
+    try to close the record --> 
