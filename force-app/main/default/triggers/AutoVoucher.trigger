@@ -1,3 +1,4 @@
+//completed
 trigger AutoVoucher on Certification_Request__c (after update) {
     if (Trigger.isAfter) {
         string act = 'True';

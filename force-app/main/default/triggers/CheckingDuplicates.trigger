@@ -1,3 +1,4 @@
+//completed
 trigger CheckingDuplicates on Certification_Request__c (before insert) {
     if ( Trigger.isInsert ) {
         for ( Certification_Request__c obj : Trigger.new ) {
