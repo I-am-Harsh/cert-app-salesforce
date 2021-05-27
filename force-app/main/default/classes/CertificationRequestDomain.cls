@@ -1,8 +1,9 @@
 public with sharing class CertificationRequestDomain {
     CertificationRequestSelector certReqSelector = new CertificationRequestSelector();
     public static fflib_SObjectUnitOfWork uow = new fflib_SObjectUnitOfWork(new Schema.SObjectType[] { Certification_Request__c.SObjectType });
-    
     VoucherSelector voucherSelector = new VoucherSelector(); 
+
+    
     public CertificationRequestDomain(List<Certification_Request__c> sObjectList){
         super(sObjectList);
     }

@@ -3,13 +3,23 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
         return new List<Schema.SObjectField> {
             Certification_Request__c.Certification__c, 
             Certification_Request__c.Voucher__c, 
-            Certification_Request__c.Status__c
+            Certification_Request__c.Status__c,
+            Certification_Request__c.Comments__c, 
+            Certification_Request__c.Due_Date__c, 
+            Certification_Request__c.Employee__c, 
+            Certification_Request__c.Id, 
+            Certification_Request__c.Name
         };
     }
 
     public Schema.SObjectType getSObjectType() {
         return Certification_Request__c.sObjectType;
     }
+
+    public override String getOrderBy() {
+        return 'Id ASC NULL FIRST';
+    }
+
 
     public List<Certification_Request__c> selectById(Set<ID> idSet){
         return (List<Certification_Request__c>) selectSObjectsById(idSet);
@@ -61,6 +71,19 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
         return (List<Certification_Request__c>) Database.query(query);
     }
 
+    public List<Certification_Request__c> getAllCertificationRequests(Integer recordLimit){
+        String query = String.format(
+            'select {0} from {1}' + 
+            'order by {2} limit {3}',
+            new List<String> {
+                getFieldListString(),
+                getSObjectName(),
+                getOrderBy(),
+                String.valueOf(recordLimit)
+            }
+        )
 
+        return (List<Voucher__c>) Database.query(query);
+    }
     
 }
