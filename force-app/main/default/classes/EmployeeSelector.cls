@@ -17,7 +17,7 @@ public with sharing class EmployeeSelector extends fflib_SObjectSelector {
     }
 
     public List<Employee__c> selectById(Set<ID> idSet){
-        return (List<Certification_Request__c>) selectSObjectsById(idSet);
+        return (List<Employee__c>) selectSObjectsById(idSet);
     }
 
     public override String getOrderBy() {
@@ -34,7 +34,7 @@ public with sharing class EmployeeSelector extends fflib_SObjectSelector {
                 getOrderBy(),
                 String.valueOf(recordLimit)
             }
-        )
+        );
 
         return (List<Employee__c>) Database.query(query);
     }

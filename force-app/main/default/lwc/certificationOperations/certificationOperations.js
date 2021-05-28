@@ -42,6 +42,7 @@ export default class CertificationOperations extends LightningElement {
 
         const recordInp = { apiName: Cert_Object.objectApiName, fields };
 
+        // make change
         createRecord(recordInp).then(() => {
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Voila',
@@ -127,6 +128,7 @@ export default class CertificationOperations extends LightningElement {
 
         const recordInp = { fields };
 
+        //change this
         updateRecord(recordInp).then(() => {
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Success',
@@ -145,6 +147,7 @@ export default class CertificationOperations extends LightningElement {
     }
 
     deleteCert(curRow) {
+        //change this
         deleteRecord(curRow.Id).then(() => {
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Deleted',

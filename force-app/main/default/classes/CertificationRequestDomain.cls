@@ -39,7 +39,7 @@ public with sharing class CertificationRequestDomain {
                 //create selector method
                 List<Certification_Request__c> existingCertReq = certReqSelector.getCertRequestByCertIdandVouId(certReq.Certification__c, certReq.Voucher__c);
                 if(!existingCertReq.isEmpty()){
-                    obj.addError('Cannot Use Same Certification and Voucher Details Again, Request Already Pending !');
+                    certReq.addError('Cannot Use Same Certification and Voucher Details Again, Request Already Pending !');
                 }
             }
         }

@@ -49,7 +49,7 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
                 '\'' + certificationId + '\'',
                 '\'' + voucherId + '\''
             }
-        )
+        );
 
         return (List<Certification_Request__c>) Database.query(query);
     }
@@ -57,7 +57,6 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
 
     public List<Certification_Request__c> getCertByEmpId(Id empId){
         String employeeId = (String) empId;
-        String voucherId = (String) vouId;
         String query = String.format(
             'select {0} from {1}' + 
             'where Employee__c = {2}',
@@ -66,7 +65,7 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
                 getSObjectName(),
                 '\'' + employeeId + '\''
             }
-        )
+        );
 
         return (List<Certification_Request__c>) Database.query(query);
     }
@@ -81,9 +80,9 @@ public with sharing class CertificationRequestSelector extends fflib_SObjectSele
                 getOrderBy(),
                 String.valueOf(recordLimit)
             }
-        )
+        );
 
-        return (List<Voucher__c>) Database.query(query);
+        return (List<Certification_Request__c>) Database.query(query);
     }
     
 }
